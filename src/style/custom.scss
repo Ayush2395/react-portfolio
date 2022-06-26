@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap");
+
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+
+// overwrite the variables
+$primary: #00adb5;
+$secondary: #eeeeee;
+$body-bg: #222831;
+$success: #393e46;
+$dark: #222831;
+
+// Default variable overrides
+
+@import url("../../node_modules/bootstrap/scss/bootstrap.scss");
+
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+section {
+  min-height: 100vh;
+  position: relative;
+  top: 8vh;
+}
+
+body {
+  font-family: "Fira Code", monospace;
+}
+
+.cursor {
+  animation: blink 1s linear infinite forwards;
+}
