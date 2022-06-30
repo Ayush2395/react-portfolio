@@ -5,13 +5,23 @@ import Project from "./pages/Project";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faAnglesUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAnglesUp,
+  faArrowDown,
+  faGraduationCap,
+  faScrewdriverWrench,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-library.add(faArrowDown, faAnglesUp);
+import ParticlesBackground from "./components/ParticlesBackground";
+import Footer from "./components/Footer";
+library.add(faArrowDown, faAnglesUp, faGraduationCap, faScrewdriverWrench);
 
 export default function App() {
   useEffect(() => {
     window.addEventListener("scroll", scrollUpTop);
+    const script = document.createElement("script");
+    script.src =
+      'https://kit.fontawesome.com/b15af52e57.js" crossorigin="anonymous';
   }, []);
 
   function scrollUpTop() {
@@ -27,7 +37,7 @@ export default function App() {
     <>
       <div className="container">
         <NavMenu />
-        {/* <ParticlesBackground /> */}
+        <ParticlesBackground />
         <LandingPage />
         <Project />
         <About />
@@ -36,6 +46,7 @@ export default function App() {
           <FontAwesomeIcon icon="fa-solid fa-angles-up" />
         </a>
       </div>
+      <Footer />
     </>
   );
 }

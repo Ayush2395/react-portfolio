@@ -5,7 +5,11 @@ import { useTypewriter } from "react-simple-typewriter";
 
 export default function LandingPage() {
   const { text } = useTypewriter({
-    words: ["Front-End Developer", "Back-End Developer", "UI/UX Developer"],
+    words: [
+      "Front-End Developer 💻",
+      "Back-End Developer 🎒",
+      "UI/UX Developer 😎",
+    ],
     loop: 0,
     typeSpeed: 70,
     deleteSpeed: 50,
@@ -41,10 +45,10 @@ export default function LandingPage() {
               <div className="stroke-2 mt-3"></div>
               <Stack direction="horizontal" gap="5">
                 <a href="#about" className="mt-3 mb-5 border-none btn">
-                  About me <FontAwesomeIcon icon="fa fa-arrow-down" />
+                  About me 😀 <FontAwesomeIcon icon="fa fa-arrow-down" />
                 </a>
                 <a href="#contact" className="mt-3 mb-5 border-none btn">
-                  Contact me
+                  Contact me 🤙
                 </a>
               </Stack>
             </div>

@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap");
 
+@function tint-color($color, $weight) {
+  @return mix(white, $color, $weight);
+}
+
 // Required
 @import "../../node_modules/bootstrap/scss/functions";
 
@@ -10,9 +14,17 @@ $body-bg: #222831;
 $success: #393e46;
 $dark: #222831;
 $transparent: transparent;
+$shadow-outer: 2px 2px 8px rgba(0, 0, 0, 0.4);
+$shadow-inner: 2px 2px 8px rgba(0, 0, 0, 0.4) inset;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "dark": $dark,
+  "success": $success,
+);
 
 // Default variable overrides
-
 @import url("../../node_modules/bootstrap/scss/bootstrap.scss");
 
 @import "../../node_modules/bootstrap/scss/variables";
@@ -118,5 +130,146 @@ body {
   }
   50% {
     transform: rotate(3deg);
+  }
+}
+
+// contact page
+
+.input {
+  height: 55px;
+  background-color: $body-bg;
+  border: 2px solid $secondary;
+  border-radius: 30px;
+  transition: border 0.3s ease-in;
+}
+
+.input:focus {
+  background-color: $body-bg;
+  border: 2px solid tint-color($primary, 50%);
+}
+
+label {
+  margin-left: 18px;
+}
+
+textarea {
+  resize: none;
+  height: 150px;
+  background-color: $body-bg !important;
+  border: 2px solid $secondary !important;
+  border-radius: 10px !important;
+  transition: border 0.3s ease-in;
+}
+
+textarea:focus {
+  border: 3px solid tint-color($primary, 50%) !important;
+}
+
+.social_media i {
+  color: $secondary;
+  font-size: 20px;
+  position: relative;
+  z-index: 100;
+}
+
+.icons {
+  height: 50px;
+  width: 50px;
+  background-color: $body-bg;
+  border-radius: 50%;
+  box-shadow: $shadow-outer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+.icons:hover {
+  box-shadow: $shadow-inner;
+}
+
+// footer
+footer {
+  position: relative;
+  height: 80px;
+  bottom: -10rem;
+  background-color: tint-color($body-bg, 10%);
+}
+
+// About page
+.tabs {
+  height: auto;
+  padding: 10px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  margin: 1.5rem 0 1.5rem 0;
+  border: 2px solid white;
+  padding: 0.8rem;
+  border-radius: 50px;
+}
+
+.options li {
+  background-color: transparent;
+  text-align: center;
+  color: $secondary;
+  width: 150px;
+  border-radius: 30px;
+  padding: 0.8rem;
+  cursor: pointer;
+  border: 2px solid $primary;
+  transition: all 0.3s ease;
+}
+
+.options li.active {
+  background-color: $secondary;
+  color: $success;
+  border: none;
+}
+
+.options li:hover:not(.active) {
+  background-color: tint-color($primary, 50%);
+  color: $success;
+}
+
+.outlets {
+  height: 710px;
+}
+
+.stroke {
+  height: 38rem;
+  width: 5px;
+  background-color: $primary;
+  border-radius: 5px;
+}
+
+.about_icon {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $body-bg;
+  box-shadow: $shadow-outer;
+  border: 2px solid $primary;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.details {
+  position: relative;
+  top: -35.2rem;
+  margin-left: 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .stroke {
+    height: 42rem;
+  }
+  .details {
+    top: -40.2rem;
   }
 }
