@@ -1,12 +1,15 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import logo from "../assets/img/logo.png";
 
 export default function NavMenu() {
   return (
     <>
-      <Navbar bg="dark" fixed="top" variant="dark" expand="lg">
+      <Navbar bg="dark" fixed="top" variant="dark" expand="lg" id="header">
         <Container>
-          <Navbar.Brand href="#">Ayush</Navbar.Brand>
+          <Navbar.Brand href="#">
+            <img src={logo} alt="logo" width={50} />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">

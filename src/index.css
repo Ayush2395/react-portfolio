@@ -8,10 +8,16 @@ body {
   .home_section img {
     width: 250px;
   }
+  .logo {
+    width: 350px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .home_section img {
     width: 150px;
+  }
+  .logo {
+    width: 250px;
   }
 }

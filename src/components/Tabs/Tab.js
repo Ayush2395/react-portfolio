@@ -6,9 +6,9 @@ import Skills from "./Skills";
 export default function Tab() {
   const [activeTab, setActiveTab] = useState("education");
   return (
-    <Container fluid="xs">
+    <Container fluid="xs" className="mb-5">
       <div className="text-primary tabs">
-        <div className="options">
+        <div className="options w-md-50">
           <li
             onClick={() => {
               setActiveTab("education");

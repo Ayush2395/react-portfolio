@@ -19,6 +19,7 @@ library.add(faArrowDown, faAnglesUp, faGraduationCap, faScrewdriverWrench);
 export default function App() {
   useEffect(() => {
     window.addEventListener("scroll", scrollUpTop);
+    window.addEventListener("scroll", headerShadow);
     const script = document.createElement("script");
     script.src =
       'https://kit.fontawesome.com/b15af52e57.js" crossorigin="anonymous';
@@ -33,6 +34,16 @@ export default function App() {
       scrollUp.classList.remove("popUp");
     }
   }
+
+  function headerShadow() {
+    const header = document.getElementById("header");
+    if (this.scrollY > 80) {
+      header.classList.add("header");
+    } else {
+      header.classList.remove("header");
+    }
+  }
+
   return (
     <>
       <div className="container">

@@ -3,7 +3,9 @@ import React from "react";
 export default function Project() {
   return (
     <section id="project">
-      <h1>Project page</h1>
+      <div className="main">
+        <h1 className="text-primary">Project page</h1>
+      </div>
     </section>
   );
 }
