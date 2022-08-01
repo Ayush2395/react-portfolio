@@ -1,0 +1,111 @@
+// Google fonts
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+// functions
+@function tint-color($color, $weight) {
+  @return mix(white, $color, $weight);
+}
+
+@import "~bootstrap/scss/functions";
+
+$primary: #5c64cf;
+$secondary: #c8b4ac;
+$danger: #ff441b;
+$success: #9a6936;
+$info: #d4a145;
+$warning: #f7af24;
+$dark: #422f21;
+$light: #fcfbfa;
+$body-bg: $light;
+
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+
+// global changes
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+section {
+  min-height: 100vh;
+}
+
+.main {
+  position: relative;
+  top: 10vh;
+}
+
+.intro {
+  max-width: 420px;
+}
+
+.circle_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 45px;
+  background-color: tint-color($secondary, 78%);
+  border-radius: 50%;
+  font-size: 25px;
+}
+
+.circle_btn a {
+  color: tint-color(black, 26%);
+}
+
+.social_media {
+  width: 280px;
+}
+.scroll_down {
+  position: absolute;
+  right: 0;
+  top: 380px;
+}
+
+.logo {
+  height: 150px;
+  width: 150px;
+  background-color: $light;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// navbar
+.searchForm {
+  width: 180px;
+  border: 2px solid $info;
+  border-radius: 10px;
+}
+
+.searchForm .input-group-text {
+  background-color: transparent;
+  border: none;
+}
+
+.searchForm .form-control {
+  border: none;
+}
+
+// about section
+
+// media query
+@media screen and (max-width: 768px) {
+  .profile {
+    width: 180px;
+  }
+
+  .logo {
+    display: none;
+  }
+  .scroll_down {
+    top: 280px;
+  }
+  .about_section {
+    margin-bottom: 80px;
+  }
+}

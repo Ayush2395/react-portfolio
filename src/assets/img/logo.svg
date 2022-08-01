@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="69" height="73.798" viewBox="0 0 69 73.798">
+  <defs>
+    <filter id="Path_24" x="18.305" y="37.87" width="29.476" height="35.928" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_25" x="21.756" y="37.747" width="29.55" height="36.051" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_26" x="25.144" y="37.747" width="29.55" height="36.051" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_19" x="14.554" y="0" width="54.446" height="73.688" filterUnits="userSpaceOnUse">
+      <feOffset dx="-1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur-4"/>
+      <feFlood flood-opacity="0.451"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="logo" transform="translate(-634.399 -175.261)">
+    <g id="Group_7" data-name="Group 7" transform="translate(652.404 208.393)">
+      <path id="Path_21" data-name="Path 21" d="M0,.162,32.59,0V1.694L.866,1.492Z" transform="translate(0 27.935) rotate(-59)" fill="#9a6936"/>
+      <path id="Path_22" data-name="Path 22" d="M0,.162,30.1,0V1.694L.8,1.492Z" transform="translate(3.387 27.935) rotate(-59)" fill="#9a6936"/>
+      <path id="Path_23" data-name="Path 23" d="M0,.162,30.1,0V1.694L.8,1.492Z" transform="translate(6.774 27.935) rotate(-59)" fill="#9a6936"/>
+      <g transform="matrix(1, 0, 0, 1, -18, -33.13)" filter="url(#Path_24)">
+        <path id="Path_24-2" data-name="Path 24" d="M0,1.257l20.142.028L19.513.1.755,0Z" transform="translate(37.68 61.8) rotate(-121)" fill="#f7af24"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -18, -33.13)" filter="url(#Path_25)">
+        <path id="Path_25-2" data-name="Path 25" d="M0,1.257l20.286.028L19.645.111.761,0Z" transform="translate(41.2 61.8) rotate(-121)" fill="#f7af24"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -18, -33.13)" filter="url(#Path_26)">
+        <path id="Path_26-2" data-name="Path 26" d="M0,1.257l20.286.028L19.645.111.761,0Z" transform="translate(44.59 61.8) rotate(-121)" fill="#f7af24"/>
+      </g>
+      <path id="Polygon_1" data-name="Polygon 1" d="M3.1,0l3.1,5.081H0Z" transform="translate(10.771 22.937)" fill="#f7af24"/>
+    </g>
+    <path id="Path_20" data-name="Path 20" d="M6.944,0,56.652,2.3l6.216,11.213L0,11.864Z" transform="matrix(-0.485, 0.875, -0.875, -0.485, 676.698, 187.914)" fill="#9a6936"/>
+    <g transform="matrix(1, 0, 0, 1, 634.4, 175.26)" filter="url(#Path_19)">
+      <path id="Path_19-2" data-name="Path 19" d="M7,13.619l50.128-3.06L62.982,0,0,1.768Z" transform="translate(33.47 6) rotate(61)" fill="#f7af24"/>
+    </g>
+    <g id="Path_27" data-name="Path 27" transform="translate(657.124 182.058)" fill="#ff441b">
+      <path d="M 9.248517036437988 10.2664966583252 L 6.445711612701416 5.735590934753418 L 9.19532585144043 1.045599579811096 L 11.96522045135498 5.740310192108154 L 9.248517036437988 10.2664966583252 Z" stroke="none"/>
+      <path d="M 9.196687698364258 2.031871795654297 L 7.029360771179199 5.72866153717041 L 9.242084503173828 9.3056640625 L 11.38338947296143 5.738125801086426 L 9.196687698364258 2.031871795654297 M 9.193957328796387 0.05932235717773438 L 12.54705810546875 5.742512226104736 L 9.25495719909668 11.2273416519165 L 5.862057685852051 5.742512226104736 L 9.193957328796387 0.05932235717773438 Z" stroke="none" fill="#5c64cf"/>
+    </g>
+  </g>
+</svg>
