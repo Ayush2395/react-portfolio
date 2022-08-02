@@ -1,15 +1,40 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Col, Row } from "react-bootstrap";
 import { DiReact } from "react-icons/di";
 import { TbBrandJavascript } from "react-icons/tb";
 import { SiBootstrap, SiAdobexd, SiFirebase } from "react-icons/si";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 export default function About() {
+  const fadeIn = {
+    hide: {
+      y: 10,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 1, type: "tween" },
+    },
+  };
+
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const control = useAnimation();
+
+  useEffect(() => {
+    isInView ? control.start("visible") : control.start("hide");
+  }, [control, isInView]);
   return (
     <>
-      <section className="about_section" id="about">
-        <div className="main container">
+      <section ref={ref} className="about_section" id="about">
+        <motion.div
+          variants={fadeIn}
+          initial="hide"
+          animate={control}
+          className="main container"
+        >
           <Row>
             <Col xs="12" sm="12" md="6" lg="6">
               <h1 className="display-1 fw-normal">Skills &</h1>
@@ -107,7 +132,7 @@ export default function About() {
               </Row>
             </Col>
           </Row>
-        </div>
+        </motion.div>
       </section>
     </>
   );

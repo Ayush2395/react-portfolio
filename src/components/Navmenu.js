@@ -13,7 +13,7 @@ import logo from "../assets/img/logo.svg";
 export default function Navmenu() {
   return (
     <>
-      <Navbar fixed="top" bg="light" expand="lg" className="mb-3">
+      <Navbar id="header" fixed="top" bg="light" expand="lg" className="mb-3">
         <Container>
           <Navbar.Brand href="#">
             <img src={logo} alt="logo" width={30} />
@@ -38,7 +38,7 @@ export default function Navmenu() {
                 <Nav.Link href="#services">Services</Nav.Link>
                 <Nav.Link href="#about">About</Nav.Link>
                 <Nav.Link href="#projects">Projects</Nav.Link>
-                <Nav.Link href="#testimonials">Testimonials</Nav.Link>
+                {/* <Nav.Link href="#testimonials">Testimonials</Nav.Link> */}
                 <Nav.Link href="#contact">Contact</Nav.Link>
               </Nav>
               <Form className="d-flex searchForm">

@@ -18,12 +18,24 @@ $dark: #422f21;
 $light: #fcfbfa;
 $body-bg: $light;
 
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "danger": $danger,
+  "success": $success,
+  "info": $info,
+  "dark": $dark,
+  "light": $light,
+  "warning": $warning,
+);
+
 @import "~bootstrap/scss/bootstrap.scss";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/root";
 
 // global changes
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -75,6 +87,29 @@ section {
   align-items: center;
 }
 
+.scroll_up_btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  transform: translateX(200%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.scroll_up_btn.show_up_btn {
+  transform: translateX(0);
+}
+
+.active-link {
+  color: $primary !important;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+textarea {
+  resize: none;
+  height: 180px;
+}
+
 // navbar
 .searchForm {
   width: 180px;
@@ -91,7 +126,15 @@ section {
   border: none;
 }
 
-// about section
+.header {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.31);
+  transition: box-shadow 0.3s ease-in;
+}
+
+// testimonial section
+.testimonial {
+  min-height: 60vh;
+}
 
 // media query
 @media screen and (max-width: 768px) {
@@ -105,7 +148,12 @@ section {
   .scroll_down {
     top: 280px;
   }
+
   .about_section {
     margin-bottom: 80px;
+  }
+
+  .contact_section {
+    margin-bottom: 120px;
   }
 }
