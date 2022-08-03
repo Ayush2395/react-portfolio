@@ -117,8 +117,8 @@ textarea {
   height: 180px;
 }
 
-hr{
- width: 90% !important; 
+hr {
+  width: 90% !important;
 }
 
 // navbar
@@ -147,8 +147,6 @@ hr{
   min-height: 60vh;
 }
 
-
-
 // media query
 @media screen and (max-width: 768px) {
   .profile {
@@ -169,12 +167,12 @@ hr{
   .contact_section {
     margin-bottom: 120px;
   }
-  .row-2{
+  .row-2 {
     position: relative;
     top: 15% !important;
   }
 
-  hr{
+  hr {
     width: 100% !important;
   }
 }

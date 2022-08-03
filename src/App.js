@@ -23,6 +23,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faArrowAltCircleRight } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Footer from "./components/Footer";
 library.add(
   faMagnifyingGlass,
   faPaperPlane,
@@ -90,6 +91,7 @@ export default function App() {
       <Projects />
       <Testimonial />
       <Contact />
+      <Footer />
       <div className="scroll_up_btn d-flex justify-content-center align-item-center">
         <a href="#home" rel="noreferrer" className="btn btn-success">
           <FontAwesomeIcon icon="fa-solid fa-arrow-up" />
