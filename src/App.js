@@ -19,6 +19,7 @@ import {
   faArrowUp,
   faGear,
   faPenClip,
+  faTarp,
 } from "@fortawesome/free-solid-svg-icons";
 import { faArrowAltCircleRight } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,7 +31,8 @@ library.add(
   faUser,
   faArrowUp,
   faGear,
-  faPenClip
+  faPenClip,
+  faTarp
 );
 
 export default function App() {

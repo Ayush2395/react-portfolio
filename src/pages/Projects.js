@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef } from "react";
-import { Container } from "react-bootstrap";
+import { Row, Col, Image } from "react-bootstrap";
 import { motion, useInView, useAnimation } from "framer-motion";
+import { AiFillGithub } from "react-icons/ai";
 
 export default function Projects() {
   const fadeIn = {
@@ -32,23 +33,124 @@ export default function Projects() {
           animate={control}
           className="main container"
         >
-          <h1>Project section</h1>
-          <Container
-            className="d-flex justify-content-center align-items-center"
-            style={{ minHeight: "60vh" }}
-          >
-            <div className="w-100" style={{ maxWidth: "400px" }}>
-              <FontAwesomeIcon
-                className="fa-spin w-100 text-center mb-3"
-                size="8x"
-                icon="fa-solid fa-gear"
-              />
-              <h1 className="display-6 w-100 text-center">Under maintenance</h1>
-              <h1 className="display-6 w-100 text-center">
-                Sorry for inconvinient
-              </h1>
-            </div>
-          </Container>
+          <Row>
+            <Col xs="12" sm="12" md="4" lg="4">
+              <Row>
+                <Col>
+                  <h1 className="display-1 fw-normal">Latest</h1>
+                  <h1 className="display-1 fw-normal">Projects</h1>
+                </Col>
+              </Row>
+              <Row>
+                <Row>
+                  <hr />
+                  <Col xs="9">
+                    <h1 className="fs-3">React Portfolio</h1>
+                    <h1 className="fs-3">Web design</h1>
+                  </Col>
+                  <Col xs="3">
+                    <a
+                      href="https://github.com/Ayush2395/react-portfolio"
+                      className="btn btn-primary circle_btn bg-primary"
+                    >
+                      <FontAwesomeIcon
+                        icon="fa-solid fa-arrow-up"
+                        className="fa-bounce"
+                        style={{ rotate: "45deg" }}
+                      />
+                    </a>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Image
+                      className="w-100 justify-self-center"
+                      rounded
+                      fluid
+                      src="https://user-images.githubusercontent.com/37956873/182311874-2ea5a05b-c696-4ff4-9543-b59571ce2441.png"
+                      alt="website"
+                      width={350}
+                    />
+                  </Col>
+                </Row>
+              </Row>
+            </Col>
+            <Col xs="12" sm="12" md="4" lg="4" className="mb-4">
+              <Row className="position-relative top-25 row-2 mb-5">
+                <hr />
+                <Col xs="9">
+                  <h1 className="fs-3">Web Tools</h1>
+                  <h1 className="fs-3">Page design</h1>
+                </Col>
+                <Col xs="3">
+                  <a
+                    href="https://github.com/Ayush2395/webtools"
+                    className="btn btn-primary circle_btn bg-primary"
+                  >
+                    <FontAwesomeIcon
+                      icon="fa-solid fa-arrow-up"
+                      className="fa-bounce"
+                      style={{ rotate: "45deg" }}
+                    />
+                  </a>
+                </Col>
+                <Row className="mb-5">
+                  <Col>
+                    <Image
+                      className="w-100 justify-self-center"
+                      rounded
+                      fluid
+                      src="https://user-images.githubusercontent.com/37956873/182526315-bfb76127-1d7f-4342-b966-54a975890b9f.png"
+                      alt="website"
+                      width={350}
+                    />
+                  </Col>
+                </Row>
+              </Row>
+            </Col>
+            <Col xs="12" sm="12" md="4" lg="4" className="mb-5">
+              <Row className="position-relative top-0 mb-5">
+                <hr />
+                <Col xs="9">
+                  <h1 className="fs-3">Speedmil</h1>
+                  <h1 className="fs-3">Page design</h1>
+                </Col>
+                <Col xs="3">
+                  <a
+                    href="https://github.com/Ayush2395/Speedmil"
+                    className="btn btn-primary circle_btn bg-primary"
+                  >
+                    <FontAwesomeIcon
+                      icon="fa-solid fa-arrow-up"
+                      className="fa-bounce"
+                      style={{ rotate: "45deg" }}
+                    />
+                  </a>
+                </Col>
+                <Row>
+                  <Col>
+                    <Image
+                      className="d-block mb-3 w-100 justify-self-center"
+                      rounded
+                      fluid
+                      src="https://user-images.githubusercontent.com/37956873/182526690-f74a5034-af56-45a1-9a50-7b6257af3a18.png"
+                      alt="website"
+                      width={350}
+                    />
+                    <a
+                      href="https://github.com/Ayush2395?tab=repositories"
+                      className="btn btn-light"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      More Projects{" "}
+                      <AiFillGithub className="fa-fade" size="25px" />
+                    </a>
+                  </Col>
+                </Row>
+              </Row>
+            </Col>
+          </Row>
         </motion.div>
       </section>
     </>
