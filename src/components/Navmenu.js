@@ -9,13 +9,16 @@ import {
   InputGroup,
 } from "react-bootstrap";
 import logo from "../assets/img/logo.svg";
+import { Link } from "react-router-dom";
+import { useAppState } from "../api/ContextApi";
 
 export default function Navmenu() {
+  const { searchTerm, getSearchResult } = useAppState();
   return (
     <>
       <Navbar id="header" fixed="top" bg="light" expand="lg" className="mb-3">
         <Container>
-          <Navbar.Brand href="#">
+          <Navbar.Brand as={Link} to="/">
             <img src={logo} alt="logo" width={30} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-false-${false}`} />
@@ -47,6 +50,8 @@ export default function Navmenu() {
                     type="search"
                     className="me-auto"
                     placeholder="project name"
+                    value={searchTerm}
+                    onChange={getSearchResult}
                   />
                   <InputGroup.Text className="text-primary">
                     <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />

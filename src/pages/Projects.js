@@ -1,10 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef } from "react";
-import { Row, Col, Image } from "react-bootstrap";
+import { Row, Col, Image, Button, Stack } from "react-bootstrap";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { AiFillGithub } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 export default function Projects() {
+  const navigate = useNavigate();
   const fadeIn = {
     hide: {
       y: 10,
@@ -137,15 +139,25 @@ export default function Projects() {
                       alt="website"
                       width={350}
                     />
-                    <a
-                      href="https://github.com/Ayush2395?tab=repositories"
-                      className="btn btn-light"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      More Projects{" "}
-                      <AiFillGithub className="fa-fade" size="25px" />
-                    </a>
+                    <Stack direction="horizontal" gap="3">
+                      <a
+                        href="https://github.com/Ayush2395?tab=repositories"
+                        className="btn btn-light"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        More Projects{" "}
+                        <AiFillGithub className="fa-fade" size="25px" />
+                      </a>
+                      <Button
+                        onClick={() => {
+                          navigate("/projects-display");
+                        }}
+                      >
+                        Search projects{" "}
+                        <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+                      </Button>
+                    </Stack>
                   </Col>
                 </Row>
               </Row>

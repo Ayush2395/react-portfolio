@@ -1,11 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Col, Row, Stack } from "react-bootstrap";
 import { useTypewriter } from "react-simple-typewriter";
 import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { SiBuymeacoffee } from "react-icons/si";
 import profile from "../assets/img/profile.png";
-import { motion } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
+import Services from "./Services";
+import About from "./About";
+import Projects from "./Projects";
+import Testimonial from "./Testimonial";
+import Contact from "./Contact";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const { text } = useTypewriter({
@@ -15,10 +21,35 @@ export default function Home() {
     deleteSpeed: 70,
     delaySpeed: 1500,
   });
+
+  const fadeIn = {
+    hide: {
+      y: 10,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { type: "tween", duration: 1 },
+    },
+  };
+
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const control = useAnimation();
+
+  useEffect(() => {
+    isInView ? control.start("visible") : control.start("hide");
+  }, [control, isInView]);
   return (
     <>
-      <section id="home">
-        <div className="main container">
+      <section ref={ref} id="home">
+        <motion.div
+          variants={fadeIn}
+          initial="hide"
+          animate={control}
+          className="main container"
+        >
           <Row className="mt-3">
             <Col xs="12" sm="12" md="6" lg="6">
               <h1 className="display-1 fw-bold">I Have</h1>
@@ -103,8 +134,14 @@ export default function Home() {
           >
             {"---Scroll Down-->"}
           </motion.div>
-        </div>
+        </motion.div>
       </section>
+      <Services />
+      <About />
+      <Projects />
+      <Testimonial />
+      <Contact />
+      <Footer />
     </>
   );
 }

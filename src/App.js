@@ -3,11 +3,6 @@ import React, { useEffect } from "react";
 // components
 import Navmenu from "./components/Navmenu";
 import Home from "./pages/Home";
-import Services from "./pages/Services";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Testimonial from "./pages/Testimonial";
-import Contact from "./pages/Contact";
 
 // dependencies and modules
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -23,7 +18,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faArrowAltCircleRight } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Footer from "./components/Footer";
+import { Route, Routes } from "react-router-dom";
+import NoPageFound from "./components/NoPageFound";
+import ProjectDisplay from "./pages/ProjectDisplay";
 library.add(
   faMagnifyingGlass,
   faPaperPlane,
@@ -85,13 +82,11 @@ export default function App() {
   return (
     <>
       <Navmenu />
-      <Home />
-      <Services />
-      <About />
-      <Projects />
-      <Testimonial />
-      <Contact />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects-display" element={<ProjectDisplay />} />
+        <Route path="*" element={<NoPageFound />} />
+      </Routes>
       <div className="scroll_up_btn d-flex justify-content-center align-item-center">
         <a href="#home" rel="noreferrer" className="btn btn-success">
           <FontAwesomeIcon icon="fa-solid fa-arrow-up" />
