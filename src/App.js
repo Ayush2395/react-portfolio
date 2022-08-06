@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 // components
 import Navmenu from "./components/Navmenu";
@@ -21,6 +21,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Route, Routes } from "react-router-dom";
 import NoPageFound from "./components/NoPageFound";
 import ProjectDisplay from "./pages/ProjectDisplay";
+import Footer from "./components/Footer";
 library.add(
   faMagnifyingGlass,
   faPaperPlane,
@@ -79,18 +80,38 @@ export default function App() {
     window.addEventListener("scroll", handleActiveLink);
   }, []);
 
+  const [darkMode, setDarkMode] = useState("light");
+  const [darkModeText, setDarkModeText] = useState("dark");
+
+  const handleDarkMode = () => {
+    if (darkMode === "dark" && darkModeText === "light") {
+      setDarkMode("light");
+      setDarkModeText("dark");
+    } else {
+      setDarkMode("dark");
+      setDarkModeText("light");
+    }
+  };
+
   return (
     <>
-      <Navmenu />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects-display" element={<ProjectDisplay />} />
-        <Route path="*" element={<NoPageFound />} />
-      </Routes>
-      <div className="scroll_up_btn d-flex justify-content-center align-item-center">
-        <a href="#home" rel="noreferrer" className="btn btn-success">
-          <FontAwesomeIcon icon="fa-solid fa-arrow-up" />
-        </a>
+      <div className={`bg-${darkMode} text-${darkModeText}`}>
+        <Navmenu
+          dark={handleDarkMode}
+          darkMode={darkMode}
+          darkModeText={darkModeText}
+        />
+        <Routes>
+          <Route path="/" element={<Home darkMode={darkMode} />} />
+          <Route path="/projects-display" element={<ProjectDisplay />} />
+          <Route path="*" element={<NoPageFound />} />
+        </Routes>
+        <Footer />
+        <div className="scroll_up_btn d-flex justify-content-center align-item-center">
+          <a href="#home" rel="noreferrer" className="btn btn-success">
+            <FontAwesomeIcon icon="fa-solid fa-arrow-up" />
+          </a>
+        </div>
       </div>
     </>
   );

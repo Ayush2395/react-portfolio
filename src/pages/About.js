@@ -6,7 +6,7 @@ import { TbBrandJavascript } from "react-icons/tb";
 import { SiBootstrap, SiAdobexd, SiFirebase } from "react-icons/si";
 import { motion, useInView, useAnimation } from "framer-motion";
 
-export default function About() {
+export default function About({ darkMode, darkModeText }) {
   const fadeIn = {
     hide: {
       y: 10,
@@ -47,43 +47,60 @@ export default function About() {
               <p className="fs-3 text-info mt-4">Skills</p>
               <Row className="mb-4 mt-4">
                 <Col xs="4">
-                  <div className="circle_btn">
+                  <div
+                    className={`circle_btn bg-${darkMode} border border-3 border-${darkModeText}`}
+                  >
                     <FontAwesomeIcon
-                      className="fa-bounce"
+                      className={`fa-bounce text-${darkModeText}`}
                       icon="fa-solid fa-swatchbook"
                     />
                   </div>
                   <p className="m-auto">Visual Design</p>
                 </Col>
                 <Col xs="4">
-                  <div className="circle_btn">
-                    <DiReact className="fa-bounce" size="35px" />
+                  <div
+                    className={`circle_btn bg-${darkMode} border border-3 border-${darkModeText}`}
+                  >
+                    <DiReact
+                      className={`fa-bounce text-${darkModeText}`}
+                      size="35px"
+                    />
                   </div>
                   <p className="m-auto">ReactJs</p>
                 </Col>
                 <Col xs="4">
-                  <div className="circle_btn">
-                    <TbBrandJavascript className="fa-bounce" />
+                  <div
+                    className={`circle_btn bg-${darkMode} border border-3 border-${darkModeText}`}
+                  >
+                    <TbBrandJavascript
+                      className={`fa-bounce text-${darkModeText}`}
+                    />
                   </div>
                   <p className="m-auto">JavaScript</p>
                 </Col>
               </Row>
               <Row className="mb-3">
                 <Col xs="4">
-                  <div className="circle_btn">
-                    <SiBootstrap className="fa-bounce" />
+                  <div
+                    className={`circle_btn bg-${darkMode} border border-3 border-${darkModeText}`}
+                  >
+                    <SiBootstrap className={`fa-bounce text-${darkModeText}`} />
                   </div>
                   <p className="m-auto">Bootstrap</p>
                 </Col>
                 <Col xs="4">
-                  <div className="circle_btn">
-                    <SiAdobexd className="fa-bounce" />
+                  <div
+                    className={`circle_btn bg-${darkMode} border border-3 border-${darkModeText}`}
+                  >
+                    <SiAdobexd className={`fa-bounce text-${darkModeText}`} />
                   </div>
                   <p className="m-auto">Adobe XD</p>
                 </Col>
                 <Col xs="4">
-                  <div className="circle_btn">
-                    <SiFirebase className="fa-bounce" />
+                  <div
+                    className={`circle_btn bg-${darkMode} border border-3 border-${darkModeText}`}
+                  >
+                    <SiFirebase className={`fa-bounce text-${darkModeText}`} />
                   </div>
                   <p className="m-auto">Firebase</p>
                 </Col>

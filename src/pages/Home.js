@@ -11,9 +11,8 @@ import About from "./About";
 import Projects from "./Projects";
 import Testimonial from "./Testimonial";
 import Contact from "./Contact";
-import Footer from "../components/Footer";
 
-export default function Home() {
+export default function Home({ darkMode, darkModeText }) {
   const { text } = useTypewriter({
     words: ["Design", "Frontend", "Backend"],
     loop: true,
@@ -137,11 +136,10 @@ export default function Home() {
         </motion.div>
       </section>
       <Services />
-      <About />
+      <About darkMode={darkMode} darkModeText={darkModeText} />
       <Projects />
       <Testimonial />
       <Contact />
-      <Footer />
     </>
   );
 }
