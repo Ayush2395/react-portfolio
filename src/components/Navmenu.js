@@ -1,82 +1,61 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import {
-  Navbar,
-  Container,
-  Offcanvas,
-  Nav,
-  Form,
-  InputGroup,
-} from "react-bootstrap";
+import { Navbar, Container, Nav, Form, InputGroup } from "react-bootstrap";
 import logo from "../assets/img/logo.svg";
-import { Link } from "react-router-dom";
 import { useAppState } from "../api/ContextApi";
+import { Link } from "react-router-dom";
 
 export default function Navmenu({ dark, darkMode, darkModeText }) {
   const { searchTerm, getSearchResult } = useAppState();
   return (
     <>
       <Navbar
+        collapseOnSelect
+        variant={darkMode}
+        bg={darkMode}
+        expand="lg"
         id="header"
         fixed="top"
-        bg={darkMode}
-        variant={darkMode}
-        expand="lg"
-        className="mb-3"
       >
         <Container>
           <Navbar.Brand as={Link} to="/">
-            <img src={logo} alt="logo" width={30} />
+            <img src={logo} alt="logo" width="35" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls={`offcanvasNavbar-false-${false}`} />
-          <Navbar.Offcanvas
-            id={`offcanvasNavbar-false-${false}`}
-            aria-labelledby={`offcanvasNavbarLabel-false-${false}`}
-            placement="end"
-          >
-            <Offcanvas.Header
-              className={`bg-${darkMode} text-${darkModeText}`}
-              closeButton
-            >
-              <Offcanvas.Title
-                className=" m-auto"
-                id={`offcanvasNavbarLabel-false-${false}`}
-              >
-                <img src={logo} alt="logo" width={80} />
-              </Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body className={`bg-${darkMode} text-${darkModeText}`}>
-              <Nav className="justify-content-center flex-grow-1 pe-3">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#services">Services</Nav.Link>
-                <Nav.Link href="#about">About</Nav.Link>
-                <Nav.Link href="#projects">Projects</Nav.Link>
-                {/* <Nav.Link href="#testimonials">Testimonials</Nav.Link> */}
-                <Nav.Link href="#contact">Contact</Nav.Link>
-              </Nav>
-              <Form className="d-flex searchForm">
-                <InputGroup>
-                  <Form.Control
-                    type="search"
-                    className="me-auto"
-                    placeholder="project name"
-                    value={searchTerm}
-                    onChange={getSearchResult}
-                  />
-                  <InputGroup.Text className="text-primary">
-                    <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-                  </InputGroup.Text>
-                </InputGroup>
-              </Form>
-              <div className="d-flex justify-content-center align-items-center mx-2 mt-2">
-                <Form.Check
-                  type="switch"
-                  onClick={dark}
-                  label={darkMode.toUpperCase()}
+          <Navbar.Toggle className="border border-0">
+            <div className="toggle-icon bar-1"></div>
+            <div className="toggle-icon bar-2"></div>
+            <div className="toggle-icon bar-3"></div>
+          </Navbar.Toggle>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="m-auto me-sm-auto">
+              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#services">Services</Nav.Link>
+              <Nav.Link href="#about">About</Nav.Link>
+              <Nav.Link href="#projects">Projects</Nav.Link>
+              <Nav.Link href="#contact">Contact</Nav.Link>
+            </Nav>
+            <InputGroup className="searchForm mb-2">
+              <Form.Control
+                type="search"
+                value={searchTerm}
+                onChange={getSearchResult}
+                className="me-auto"
+                placeholder="search project"
+              />
+              <InputGroup.Text>
+                <FontAwesomeIcon
+                  className={`text-${darkModeText}`}
+                  icon="fa-solid fa-magnifying-glass"
                 />
-              </div>
-            </Offcanvas.Body>
-          </Navbar.Offcanvas>
+              </InputGroup.Text>
+            </InputGroup>
+            <Form.Check
+              type="switch"
+              className="mx-2"
+              onClick={dark}
+              label={darkMode}
+            />
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </>

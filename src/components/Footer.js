@@ -9,7 +9,7 @@ export default function Footer() {
           &copy; 2022. All rights reserved.
         </p>
         <div className="d-flex flex-wrap justify-content-center align-items-center">
-          <p>Portfolio is designed by Ayush</p>
+          <p>Portfolio is designed by Ayush,</p>
           <p>
             &nbsp;using&nbsp; <FaBootstrap size="25px" />
           </p>

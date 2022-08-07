@@ -65,11 +65,11 @@ export default function App() {
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
         document
           .querySelector(".navbar-nav a[href*=" + sectionID + "]")
-          .classList.add("active-link");
+          .classList.add("active");
       } else {
         document
           .querySelector(".navbar-nav a[href*=" + sectionID + "]")
-          .classList.remove("active-link");
+          .classList.remove("active");
       }
     });
   };
